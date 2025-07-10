@@ -1,0 +1,46 @@
+name: Flutter CI/CD with Firebase
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-distribute:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.27.2"  # Use your version
+
+      # Restore sensitive files
+      - name: Set up Google Services
+        run: |
+          echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 --decode > android/app/google-services.json
+
+      - name: Set up Keystore
+        run: |
+          echo "${{ secrets.KEY_PROPERTIES }}" > android/key.properties
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/upload-keystore.jks
+
+      # Build and distribute
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Distribute via Firebase
+        run: |
+          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
+            --app 1:154935070904:android:8abf713821570d829da44d \  # Replace with your app ID
+            --groups "dheerajsharma.cbse@gmail.com" \          # Testers group in Firebase
+            --token "${{ secrets.FIREBASE_TOKEN }}"
