@@ -45,6 +45,6 @@ jobs:
           # Distribute APK via Firebase App Distribution
           firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
           --app 1:154935070904:android:8abf713821570d829da44d \
-          --project 154935070904 \
+          --project ecommerce-app-3403f \
           --groups "dheerajsharma.cbse@gmail.com" \
           --token "${{ secrets.FIREBASE_TOKEN }}"
