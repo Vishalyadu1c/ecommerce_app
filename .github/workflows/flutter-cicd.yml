@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-distribute:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -23,13 +23,15 @@ jobs:
 
       # Restore sensitive files
       - name: Set up Google Services
+        shell: pwsh
         run: |
-          echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 --decode > android/app/google-services.json
+          [System.IO.File]::WriteAllBytes("android/app/google-services.json", [System.Convert]::FromBase64String("${{ secrets.GOOGLE_SERVICES_JSON }}"))
 
       - name: Set up Keystore
+        shell: pwsh
         run: |
-          echo "${{ secrets.KEY_PROPERTIES }}" > android/key.properties
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > upload-keystore.jks
+          Set-Content -Path android/key.properties -Value "${{ secrets.KEY_PROPERTIES }}"
+          [System.IO.File]::WriteAllBytes("upload-keystore.jks", [System.Convert]::FromBase64String("${{ secrets.KEYSTORE_BASE64 }}"))
 
       # Build and distribute
       - name: Build APK
