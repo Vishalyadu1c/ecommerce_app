@@ -24,7 +24,7 @@ jobs:
       # Restore sensitive files
       - name: Set up Google Services
         run: |
-          echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 --decode > android/app/google-services.json
+           mkdir -p android/app/echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 --decode > android/app/google-services.json
 
       - name: Set up Keystore
         run: |
