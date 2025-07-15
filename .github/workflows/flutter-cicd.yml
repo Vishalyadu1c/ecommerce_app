@@ -24,7 +24,7 @@ jobs:
       # Restore sensitive files
       - name: Set up Google Services
         run: |
-           mkdir -p android/app/echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 --decode > android/app/google-services.json
+           New-Item -ItemType Directory -Force -Path "android/app"[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("${{ secrets.GOOGLE_SERVICES_JSON }}")) | Out-File -FilePath "android/app/google-services.json" -Encoding utf8
 
       - name: Set up Keystore
         run: |
