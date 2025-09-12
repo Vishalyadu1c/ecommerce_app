@@ -1,18 +1,15 @@
 # Flutter E-commerce Mobile App
 
-A new Flutter project.
+Packages we are using:
+  • dio
+  • get
+  • get_storage
+  • firebase_core
+  • pretty_dio_logger
+  • connectivity_plus
+  • flutter_screenutil
+  • cached_network_image
 
-## Getting Started
 
 ![image alt](https://raw.githubusercontent.com/Vishalyadu1c/ecommerce_app/refs/heads/main/Frame%201.png)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
