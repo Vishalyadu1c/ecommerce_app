@@ -4,6 +4,8 @@ A new Flutter project.
 
 ## Getting Started
 
+![image alt](https://raw.githubusercontent.com/Vishalyadu1c/ecommerce_app/refs/heads/main/Frame%201.png)
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
