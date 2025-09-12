@@ -12,14 +12,14 @@ class ApiProvider {
   late Dio _dio;
   final _storageService = getx.Get.find<StorageService>();
 
-  ApiProvider._internam() {
+  ApiProvider._internal() {
     _dio = Dio();
     _initializeIntercenptor();
   }
 
   // Factory constructor to return the same instance
   factory ApiProvider(){
-    _instance ??= ApiProvider._internam();
+    _instance ??= ApiProvider._internal();
     return _instance!;
   }
 
@@ -50,7 +50,7 @@ class ApiProvider {
 
         // check connectivity
 
-        final connectivity = Connectivity().checkConnectivity();
+        final connectivity = await Connectivity().checkConnectivity();
         if (connectivity == ConnectivityResult.none) {
           throw DioException(
             requestOptions: options,
@@ -186,6 +186,7 @@ class ApiProvider {
           throw Exception('Somthing went wrong.');
       }
     }
+    return Exception('Unexpected error occurred.');
   }
 
 

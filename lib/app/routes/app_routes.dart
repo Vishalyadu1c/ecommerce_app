@@ -5,6 +5,15 @@ part of 'app_pages.dart';
 class AppRoutes {
   AppRoutes._();
   static const SPLASH_SCREEN = "/splash";
-  static const HOME_SCREEN = "/home";
-  static const DETAILS_SCREEN = "/details";
+  static const LOGIN = "/login";
+  static const FORGOT_PASSWORD = '/forgot_password';
+  static const REGISTER = '/register';
+  static const DASHBOARD = '/dashboard';
+  static const HOME = "/home";
+  static const NOTIFICATION = '/notification';
+  static const ORDER = "/order";
+  static const PROFILE = '/profile';
+  static const CATEGORIES = '/categories';
+  static const PRODUCTS = '/products';
+  static const AllPRODUCTS = '/all_products';
 }

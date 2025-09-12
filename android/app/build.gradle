@@ -10,8 +10,8 @@ plugins {
 
 android {
     namespace = "com.example.ecommerce_app"
-    compileSdk 35
-    ndkVersion = '27.1.12297006'
+    compileSdk 36
+    ndkVersion = '29.0.14033849 rc4'
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

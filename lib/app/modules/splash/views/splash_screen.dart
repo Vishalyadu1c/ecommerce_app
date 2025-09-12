@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/app/core/constants/app_assets.dart';
 import 'package:ecommerce_app/app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/app/modules/splash/controllers/splash_controller.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +12,7 @@ class SplashScreen extends GetWidget<SplashController> {
     return Scaffold(
       backgroundColor: AppColors.lightThemePrimaryColour,
       body: Center(
-        child: Text(
-          'Welcome to E-commerce App',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
+        child: Image.asset(AppAssets.logo,width: 175, height: 80,),
       ),
     );
   }

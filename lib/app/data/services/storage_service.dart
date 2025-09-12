@@ -27,12 +27,12 @@ class StorageService extends GetxService {
 
   // Language Management
   String? getLanguage() => _box.read('language');
-  void setLanguage(String language) => _box.write('language', language);
+  void setLanguage(String lang) => _box.write('language', lang);
 
 
   // Theme Management
   bool? isDarkTheme() => _box.read('theme') ?? false;
-  void setDarkTheme(String theme) => _box.write('theme', theme);
+  void setDarkTheme(bool isDark) => _box.write('theme', isDark);
 
 
   // Generic Storage Methods

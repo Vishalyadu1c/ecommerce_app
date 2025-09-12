@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color lightThemePrimaryColour = Color(0xff524eb7);
+
+  static Color lightThemePrimaryColour = hexToColor('#8E6CEF');
+
+  static Color lightGreyColour = hexToColor('#F4F4F4');
+
+  static Color lightGreySecondaryColour = hexToColor('#f3f3f3');
+  // static const Color lightThemePrimaryColour = Color(0xff524eb7);
 
   static const Color lightThemePrimaryTintColour = Color(0xff9e9cdc);
 
@@ -23,7 +29,17 @@ class AppColors {
 
   static const Color darkThemeDarkSharpColour = Color(0xff191821);
 
-  static const Color darkThemeBGDark = Color(0xff0e0d11);
+  static Color darkThemePrimaryColour = hexToColor('#1D182A');
+  // static const Color darkThemeBGDark = Color(0xff0e0d11);
+
+  static Color darkThemeSecondaryColour = hexToColor('#342F3F');
 
   static const Color darkThemeDarkNavBarColour = Color(0xff201f27);
+}
+
+ Color hexToColor(String hexCode) {
+  final buffer = StringBuffer();
+  if (hexCode.length == 6 || hexCode.length == 7) buffer.write('ff'); // default alpha
+  buffer.write(hexCode.replaceFirst('#', ''));
+  return Color(int.parse(buffer.toString(), radix: 16));
 }
