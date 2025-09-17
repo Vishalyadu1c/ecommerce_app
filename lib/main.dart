@@ -1,9 +1,9 @@
-import 'package:ecommerce_app/app/data/services/storage_service.dart';
-import 'package:ecommerce_app/app/modules/language/controller/language_controller.dart';
-import 'package:ecommerce_app/app/modules/theme/controller/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'app/data/services/storage_service.dart';
+import 'app/modules/language/controller/language_controller.dart';
+import 'app/modules/theme/controller/theme_controller.dart';
 import 'my_app.dart';
 
 main() async {

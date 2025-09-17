@@ -1,11 +1,12 @@
-import 'package:ecommerce_app/app/modules/language/controller/language_controller.dart';
-import 'package:ecommerce_app/app/modules/theme/controller/theme_controller.dart';
-import 'package:ecommerce_app/app/routes/app_pages.dart';
-import 'package:ecommerce_app/app/themes/app_themes.dart';
-import 'package:ecommerce_app/app/translation/app_translation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import 'app/modules/language/controller/language_controller.dart';
+import 'app/modules/theme/controller/theme_controller.dart';
+import 'app/routes/app_pages.dart';
+import 'app/themes/app_themes.dart';
+import 'app/translation/app_translation.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

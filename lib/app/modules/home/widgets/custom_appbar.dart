@@ -60,15 +60,18 @@ class CustomHomeAppBar extends StatelessWidget {
             ),
           ),
 
-          Container(
-            height: 38.h,
-            width: 38.h,
-            padding: EdgeInsets.all(10).w,
-            decoration: BoxDecoration(
-              color: AppColors.lightThemePrimaryColour,
-              shape: BoxShape.circle,
+          GestureDetector(
+            onTap: ()=>Get.toNamed(AppRoutes.CART),
+            child: Container(
+              height: 38.h,
+              width: 38.h,
+              padding: EdgeInsets.all(10).w,
+              decoration: BoxDecoration(
+                color: AppColors.lightThemePrimaryColour,
+                shape: BoxShape.circle,
+              ),
+              child: Image.asset(AppAssets.shopingBag),
             ),
-            child: Image.asset(AppAssets.shopingBag),
           ),
         ],
       ),

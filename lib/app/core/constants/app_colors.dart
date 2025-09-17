@@ -4,6 +4,8 @@ class AppColors {
 
   static Color lightThemePrimaryColour = hexToColor('#8E6CEF');
 
+  static Color jacketColor = hexToColor('#B3B68B');
+
   static Color lightGreyColour = hexToColor('#F4F4F4');
 
   static Color lightGreySecondaryColour = hexToColor('#f3f3f3');

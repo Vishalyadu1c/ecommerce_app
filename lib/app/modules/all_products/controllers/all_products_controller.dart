@@ -58,6 +58,7 @@ class AllProductsController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    searchController.addListener(applyFilters);
     fetchProducts();
   }
 
@@ -97,37 +98,52 @@ class AllProductsController extends GetxController {
     ProductCardModel(onSale: true, prodImage: AppAssets.bag1, prodName: "Nike Fuel Pack", prodPrice: '\$35.00',lesserAmount: '\$70.00',category:'Bags'),
     ProductCardModel(onSale: true, prodImage: AppAssets.goggle1, prodName: "Nike Show x Rush", prodPrice: '\$105.00',category:'Goggles')
   ];
-
-    applyFilters();
+    filteredProducts.assignAll(products);
   }
 
   void applyFilters() {
-    var list = products.where((p) {
-      // Gender filter
-      if (p.category.toLowerCase() != genderOption.value.name) return false;
 
-      // Deals filter
-      if (dealsOption.contains(DealsOption.onSale) && !p.onSale) return false;
+    // searching functionality
 
-      // Price filter
-      if (double.parse(p.prodPrice) < minPrice.value || double.parse(p.prodPrice) > maxPrice.value) return false;
+    final query = searchController.text.toLowerCase();
 
-      return true;
+    filteredProducts.value = products.where((e){
+      final proNamec = e.prodName.toLowerCase();
+      final proCat = e.category.toLowerCase();
+
+      return proNamec.contains(query) || proCat.contains(query);
     }).toList();
 
-    // Sorting
-    switch (sortOption.value) {
-      case SortOption.lowToHigh:
-        list.sort((a, b) => a.prodPrice.compareTo(b.prodPrice));
-        break;
-      case SortOption.highToLow:
-        list.sort((a, b) => b.prodPrice.compareTo(a.prodPrice));
-        break;
-      default:
-        break;
-    }
+  
+    // // filtering by genders
 
-    filteredProducts.assignAll(list);
+    //  list = products.where((p) {
+    //   // Gender filter
+    //   if (p.category.toLowerCase() != genderOption.value.name) return false;
+
+    //   // Deals filter
+    //   if (dealsOption.contains(DealsOption.onSale) && !p.onSale) return false;
+
+    //   // Price filter
+    //   if (double.parse(p.prodPrice) < minPrice.value || double.parse(p.prodPrice) > maxPrice.value) return false;
+
+    //   return true;
+    // }).toList();
+
+
+    // // Sorting by price
+    // switch (sortOption.value) {
+    //   case SortOption.lowToHigh:
+    //     list.sort((a, b) => a.prodPrice.compareTo(b.prodPrice));
+    //     break;
+    //   case SortOption.highToLow:
+    //     list.sort((a, b) => b.prodPrice.compareTo(a.prodPrice));
+    //     break;
+    //   default:
+    //     break;
+    // }
+
+    // filteredProducts.assignAll(list);
   }
 
   void setSortOption(SortOption option) {

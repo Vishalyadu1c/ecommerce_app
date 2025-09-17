@@ -24,6 +24,9 @@ class AppAssets {
   static const String accessoriesImg = 'assets/images/Ellipse 5.png';
 
   static const String jacketImg = 'assets/images/jacket.png';
+  static const String jacketO1Img = 'assets/images/jacket01.png';
+  static const String jacket02Img = 'assets/images/jacket02.png';
+
   static const String sliperImg = 'assets/images/sliper.png';
   static const String jacket2Img = 'assets/images/jacket2.png';
 
@@ -62,6 +65,9 @@ class AppAssets {
 
   static const String outlinedHeart = 'assets/images/outlined_heart.png';
 
+  static const String likeBlack = 'assets/images/likeblack.png';
+  static const String likeWhite = 'assets/images/likewhite.png';
+
   static const String notification = 'assets/images/bell.png';
   static const String checkOut = 'assets/images/check-out.png';
 
@@ -70,6 +76,19 @@ class AppAssets {
   
   static const String notificationWhite = 'assets/images/notificationwhite.png';
   static const String notificationBlack = 'assets/images/notificationblack.png';
+
+
+  static const String add = 'assets/images/add.png';
+  static const String minus = 'assets/images/minus.png';
+
+  static const String star = 'assets/images/star.png';
+  static const String starDark = 'assets/images/stardark.png';
+  static const String starLight = 'assets/images/starlight.png';
+
+  static const String reviewUser1 = 'assets/images/reviewuser1.png';
+  static const String reviewUser2 = 'assets/images/reviewuser2.png';
+
+  static const String bag = 'assets/images/shoping-bag.png';
 
 
   static const String uers = 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D';

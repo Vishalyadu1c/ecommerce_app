@@ -2,6 +2,10 @@
 
 import 'package:ecommerce_app/app/modules/all_products/bindings/all_products_binding.dart';
 import 'package:ecommerce_app/app/modules/all_products/views/all_produts_screen.dart';
+import 'package:ecommerce_app/app/modules/cart/bindings/cart_binding.dart';
+import 'package:ecommerce_app/app/modules/cart/views/cart.dart';
+import 'package:ecommerce_app/app/modules/product_view/bindings/product_view_binding.dart';
+import 'package:ecommerce_app/app/modules/product_view/views/product_view.dart';
 
 import '../modules/categories/bindings/categories_binding.dart';
 import '../modules/categories/views/categories_screen.dart';
@@ -84,6 +88,14 @@ class AppPages {
     GetPage(
         name: AppRoutes.AllPRODUCTS,
         page: () => AllProdutsScreen(),
-        binding: AllProductsBinding())
+        binding: AllProductsBinding()),
+    GetPage(
+        name: AppRoutes.PRODUCTVIEW,
+        page: () => ProductView(),
+        binding: ProductViewBinding()),
+    GetPage(
+        name: AppRoutes.CART,
+        page: () => Cart(),
+        binding: CartBinding())
   ];
 }

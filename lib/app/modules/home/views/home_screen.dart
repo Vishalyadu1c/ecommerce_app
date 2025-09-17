@@ -96,57 +96,60 @@ class HomeScreen extends GetWidget<HomeController> {
                       itemCount: topSellingProd.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                      return Container(
-                        width: 159.w,
-                        height: 281.h,
-                        margin: EdgeInsets.symmetric(horizontal:4.0).w,
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).cardColor,
-                          borderRadius: BorderRadius.circular(8.0).r
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          spacing: 6.0,
-                          children: [
-                            Stack(
-                              children: [
-                                Container(
-                              height: 220.h,
-                              decoration: BoxDecoration(
-                                color: AppColors.lightGreySecondaryColour,
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(8.0),
-                                  topLeft: Radius.circular(8.0)
-                                ).w,
-                                image: DecorationImage(image: AssetImage(topSellingProd[index].prodImage),fit: BoxFit.cover)
-                              ),
-                            ),
-                            Positioned(
-                              right: 5,
-                              top: 5,
-                              child: Image.asset(AppAssets.outlinedHeart))
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left:4.0).w,
-                              child: Text(topSellingProd[index].prodName, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left:4.0).w,
-                              child: Row(
-                                spacing: 10,
-                                mainAxisSize: MainAxisSize.min,
+                      return GestureDetector(
+                        onTap: ()=>Get.toNamed(AppRoutes.PRODUCTVIEW),
+                        child: Container(
+                          width: 159.w,
+                          height: 281.h,
+                          margin: EdgeInsets.symmetric(horizontal:4.0).w,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).cardColor,
+                            borderRadius: BorderRadius.circular(8.0).r
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            spacing: 6.0,
+                            children: [
+                              Stack(
                                 children: [
-                                  Text(topSellingProd[index].prodPrice, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,fontWeight: FontWeight.w600),),
-                                  if(topSellingProd[index].lesserAmount != null)
-                                  Text(topSellingProd[index].lesserAmount!, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,fontWeight: FontWeight.w600,decoration: TextDecoration.lineThrough)),
+                                  Container(
+                                height: 220.h,
+                                decoration: BoxDecoration(
+                                  color: AppColors.lightGreySecondaryColour,
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(8.0),
+                                    topLeft: Radius.circular(8.0)
+                                  ).w,
+                                  image: DecorationImage(image: AssetImage(topSellingProd[index].prodImage),fit: BoxFit.cover)
+                                ),
+                              ),
+                              Positioned(
+                                right: 5,
+                                top: 5,
+                                child: Image.asset(AppAssets.outlinedHeart))
                                 ],
                               ),
-                            )
-                          ],
+                              Padding(
+                                padding: const EdgeInsets.only(left:4.0).w,
+                                child: Text(topSellingProd[index].prodName, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:4.0).w,
+                                child: Row(
+                                  spacing: 10,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(topSellingProd[index].prodPrice, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,fontWeight: FontWeight.w600),),
+                                    if(topSellingProd[index].lesserAmount != null)
+                                    Text(topSellingProd[index].lesserAmount!, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,fontWeight: FontWeight.w600,decoration: TextDecoration.lineThrough)),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       );
                     },),
@@ -175,57 +178,60 @@ class HomeScreen extends GetWidget<HomeController> {
                       itemCount: newInProd.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                      return Container(
-                        width: 159.w,
-                        height: 281.h,
-                        margin: EdgeInsets.symmetric(horizontal:4.0).w,
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).cardColor,
-                          borderRadius: BorderRadius.circular(8.0).r
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          spacing: 6.0,
-                          children: [
-                             Stack(
-                              children: [
-                                Container(
-                              height: 220.h,
-                              decoration: BoxDecoration(
-                                color: AppColors.lightGreySecondaryColour,
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(8.0),
-                                  topLeft: Radius.circular(8.0)
-                                ).r,
-                                image: DecorationImage(image: AssetImage(newInProd[index].prodImage),fit: BoxFit.cover)
-                              ),
-                            ),
-                            Positioned(
-                              right: 5,
-                              top: 5,
-                              child: Image.asset(AppAssets.outlinedHeart))
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left:4.0).w,
-                              child: Text(newInProd[index].prodName, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                             ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left:4.0).w,
-                              child: Row(
-                                spacing: 10,
-                                mainAxisSize: MainAxisSize.min,
+                      return GestureDetector(
+                        onTap: ()=>Get.toNamed(AppRoutes.PRODUCTVIEW),
+                        child: Container(
+                          width: 159.w,
+                          height: 281.h,
+                          margin: EdgeInsets.symmetric(horizontal:4.0).w,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).cardColor,
+                            borderRadius: BorderRadius.circular(8.0).r
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            spacing: 6.0,
+                            children: [
+                               Stack(
                                 children: [
-                                  Text(newInProd[index].prodPrice, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,fontWeight: FontWeight.w600),),
-                                  if(newInProd[index].lesserAmount != null)
-                                  Text(newInProd[index].lesserAmount!, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,fontWeight: FontWeight.w600,decoration: TextDecoration.lineThrough)),
+                                  Container(
+                                height: 220.h,
+                                decoration: BoxDecoration(
+                                  color: AppColors.lightGreySecondaryColour,
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(8.0),
+                                    topLeft: Radius.circular(8.0)
+                                  ).r,
+                                  image: DecorationImage(image: AssetImage(newInProd[index].prodImage),fit: BoxFit.cover)
+                                ),
+                              ),
+                              Positioned(
+                                right: 5,
+                                top: 5,
+                                child: Image.asset(AppAssets.outlinedHeart))
                                 ],
                               ),
-                            )
-                          ],
+                              Padding(
+                                padding: const EdgeInsets.only(left:4.0).w,
+                                child: Text(newInProd[index].prodName, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                               ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:4.0).w,
+                                child: Row(
+                                  spacing: 10,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(newInProd[index].prodPrice, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,fontWeight: FontWeight.w600),),
+                                    if(newInProd[index].lesserAmount != null)
+                                    Text(newInProd[index].lesserAmount!, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 13.sp,fontWeight: FontWeight.w600,decoration: TextDecoration.lineThrough)),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       );
                     },),

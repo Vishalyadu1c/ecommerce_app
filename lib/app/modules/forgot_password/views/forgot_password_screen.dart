@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/app/core/constants/app_assets.dart';
 import 'package:ecommerce_app/app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/app/translation/app_translation_keys.dart';
+import 'package:ecommerce_app/app/widgets/custom_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -23,18 +24,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child: GestureDetector(
-                  onTap: () => Get.back(),
-                  child: Container(
-                    width: 42,
-                    height: 42,
-                    padding: EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).cardColor,
-                        shape: BoxShape.circle),
-                    child: Image.asset(Theme.of(context).brightness == Brightness.dark ? AppAssets.backArrow2 : AppAssets.backArrow),
-                  ),
-                ),
+                child: CustomBackButton(),
               ),
               SizedBox(
                 height: 50.h,
