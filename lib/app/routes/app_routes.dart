@@ -18,4 +18,5 @@ class AppRoutes {
   static const AllPRODUCTS = '/all_products';
   static const PRODUCTVIEW = '/product_view';
   static const CART = '/Cart';
+  static const CHECKOUT = '/checkout';
 }

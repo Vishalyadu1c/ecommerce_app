@@ -90,6 +90,11 @@ class AppAssets {
 
   static const String bag = 'assets/images/shoping-bag.png';
 
+  static const String cartItem1 = 'assets/images/cartitem1.png';
+  static const String cartItem2 = 'assets/images/cartitem2.png';
+
+  static const String discount = 'assets/images/discount.png';
+
 
   static const String uers = 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D';
 
